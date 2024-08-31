@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Register Form</h2>
+<form method="post"> 
+    {% csrf_token %}
+    {% if form.errors %}
+        <div class="notification is-danger">
+            <p>Please correct the errors below:</p>
+            {{ form.errors }}
+        </div>
+    {% endif %}
+    {{ form.as_p }}
+    <button class="button is-primary">Register</button> 
+</form>
+{% endblock %}
